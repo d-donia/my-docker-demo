@@ -1,0 +1,13 @@
+version: "3.5"
+services:
+  spring-boot:
+    image: spring-boot
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+      - "5005:5005"
+
+    volumes:
+      - ${APPLICATION_ROOT_FOLDER}:/usr/src/mymaven
+      #- ${MAVEN_SETTINGS_FOLDER}:/root/.m2   # uncomment this line if you need to use you local maven settings
