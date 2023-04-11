@@ -9,10 +9,11 @@ jobs:
   docker:
     timeout-minutes: 10
     runs-on: ubuntu-latest
-    container: spring-boot
+    container:
+      image: spring-boot
       volumes:
-      - C:\Users\Utente\IdeaProjects\docker-demo:/usr/src/mymaven
-      - C:\Users\Utente\.m2:/root/.m2
+        - C:\Users\Utente\IdeaProjects\docker-demo:/usr/src/mymaven
+        - C:\Users\Utente\.m2:/root/.m2
     steps:
       -
         name: Checkout
