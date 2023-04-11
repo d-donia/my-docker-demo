@@ -9,6 +9,10 @@ jobs:
   docker:
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    container: spring-boot
+      volumes:
+      - C:\Users\Utente\IdeaProjects\docker-demo:/usr/src/mymaven
+      - C:\Users\Utente\.m2:/root/.m2
     steps:
       -
         name: Checkout
@@ -35,3 +39,4 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/spring-boot
+      
